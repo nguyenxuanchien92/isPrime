@@ -19,14 +19,18 @@ public class Prime {
         int i = 2;
         boolean check = true;
         double val = number.getNumber();
-
-        while (i <= Math.sqrt(val)) {
-            if (val % i == 0) {
-                check = false;
-                break;
+        if (val > 2) {
+            while (i <= Math.sqrt(val)) {
+                if (val % i == 0) {
+                    check = false;
+                    break;
+                }
+                i++;
             }
-            i++;
+        }else {
+            check = false;
         }
+
         return check;
     }
 }
